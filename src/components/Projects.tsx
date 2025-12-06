@@ -77,15 +77,16 @@ Développement complet dans le domaine de l'intelligence artificielle et de la v
   ];
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-slate-50 dark:bg-slate-900">
+      <div className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10" />
+      <div className="max-w-7xl mx-auto relative z-10">
 
         <div className="text-center mb-16">
-          <p className="text-blue-600 font-semibold text-lg mb-4">MY WORK</p>
+          <p className="text-blue-600 dark:text-blue-400 font-semibold text-lg mb-4">MY WORK</p>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Featured Projects
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-teal-500 mx-auto" />
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-teal-500 mx-auto rounded-full" />
         </div>
 
         {/* Project Cards */}
@@ -93,7 +94,7 @@ Développement complet dans le domaine de l'intelligence artificielle et de la v
           {projects.map((project, index) => (
             <div
               key={index}
-              className="p-8 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group p-8 bg-white/80 dark:bg-slate-800/90 backdrop-blur-lg border border-gray-200/50 dark:border-slate-700/50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.01] hover:border-blue-500/50 dark:hover:border-blue-400/50"
             >
               {/* Title + Category */}
               <div className="flex items-start justify-between gap-4 mb-6 flex-wrap">
@@ -106,7 +107,7 @@ Développement complet dans le domaine de l'intelligence artificielle et de la v
                   </p>
                 </div>
 
-                <span className="px-4 py-2 bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 rounded-full text-sm font-semibold whitespace-nowrap">
+                <span className="px-4 py-2 bg-gradient-to-r from-blue-100 to-teal-100 dark:from-blue-900/40 dark:to-teal-900/40 text-blue-700 dark:text-blue-300 rounded-full text-sm font-semibold whitespace-nowrap shadow-md group-hover:scale-110 transition-transform duration-300">
                   {project.category}
                 </span>
               </div>

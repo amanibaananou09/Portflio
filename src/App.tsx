@@ -8,15 +8,16 @@ import Services from './components/Services';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import AnimatedBackground from './components/AnimatedBackground';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem('darkMode');
-      return stored ? JSON.parse(stored) : false;
+      return stored ? JSON.parse(stored) : true;
     }
-    return false;
+    return true;
   });
 
   useEffect(() => {
@@ -38,16 +39,19 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950">
-      <Navigation scrolled={scrolled} darkMode={darkMode} setDarkMode={setDarkMode} />
-      <Hero />
-      <About />
-      <Experience />
-      <Skills />
-      <Services />
-      <Projects />
-      <Contact />
-      <Footer />
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-slate-100 dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 relative">
+      <AnimatedBackground />
+      <div className="relative" style={{ zIndex: 10 }}>
+        <Navigation scrolled={scrolled} darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Hero />
+        <About />
+        <Experience />
+        <Skills />
+        <Services />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 }

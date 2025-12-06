@@ -40,14 +40,17 @@ export default function Contact() {
       id="contact"
       className="
         py-24 px-4 sm:px-6 lg:px-8 
-        bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900
-        dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900 dark:to-black
+        bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900
+        dark:bg-gradient-to-br dark:from-slate-950 dark:via-blue-950 dark:to-black
+        relative overflow-hidden
       "
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="absolute inset-0 bg-grid-pattern opacity-10" />
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <p className="text-blue-400 font-semibold text-lg mb-4">GET IN TOUCH</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Connect</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-teal-400 mx-auto rounded-full" />
           <p className="text-xl text-slate-400 mb-8">
             I'm always interested in hearing about new projects and opportunities. Feel free to reach out!
           </p>
@@ -62,16 +65,16 @@ export default function Contact() {
                 key={index}
                 href={info.href}
                 className="
-                  bg-slate-800/60 border border-slate-700 
-                  hover:border-blue-500 rounded-2xl p-8 
-                  shadow-lg hover:shadow-xl transition-all duration-300 
-                  text-center group hover:-translate-y-1
+                  group bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-lg border border-slate-700/50 
+                  hover:border-blue-500/70 dark:hover:border-blue-400/70 rounded-2xl p-8 
+                  shadow-lg hover:shadow-2xl transition-all duration-500 
+                  text-center hover:-translate-y-2 hover:scale-105
                 "
               >
-                <div className="inline-block p-4 bg-blue-900/40 rounded-xl mb-4 group-hover:scale-110 transition-transform">
-                  <Icon className="text-blue-400" size={32} />
+                <div className="inline-block p-4 bg-gradient-to-br from-blue-600 to-teal-500 rounded-xl mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
+                  <Icon className="text-white" size={32} />
                 </div>
-                <h3 className="font-bold text-white mb-2">{info.label}</h3>
+                <h3 className="font-bold text-white mb-2 text-lg">{info.label}</h3>
                 <p className="text-slate-400 group-hover:text-blue-300 transition-colors">{info.value}</p>
               </a>
             );
@@ -80,22 +83,23 @@ export default function Contact() {
 
         <div
           className="
-            bg-gradient-to-r from-blue-600 to-teal-500 
-            rounded-2xl p-12 text-white shadow-lg
+            relative bg-gradient-to-r from-blue-600 via-blue-500 to-teal-500 
+            rounded-2xl p-12 text-white shadow-2xl overflow-hidden group
           "
         >
-          <div className="max-w-2xl mx-auto">
+          <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="max-w-2xl mx-auto relative z-10">
             <h3 className="text-3xl font-bold mb-6 text-center">Ready to work together?</h3>
             <p className="text-xl text-blue-100 mb-8 text-center">
               Let's bring your ideas to life with modern technologies and innovative solutions.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div>
+              <div className="hover:scale-105 transition-transform duration-300">
                 <p className="text-blue-100 text-sm uppercase tracking-wider mb-2">Availability</p>
                 <p className="text-xl font-semibold">Open for Opportunities</p>
               </div>
-              <div>
+              <div className="hover:scale-105 transition-transform duration-300">
                 <p className="text-blue-100 text-sm uppercase tracking-wider mb-2">Response Time</p>
                 <p className="text-xl font-semibold">Within 24 hours</p>
               </div>
@@ -110,10 +114,10 @@ export default function Contact() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-4 bg-white/20 hover:bg-white/30 rounded-lg transition-colors group"
+                    className="p-4 bg-white/20 hover:bg-white/30 rounded-lg transition-all duration-300 group/icon hover:scale-110"
                     aria-label={link.label}
                   >
-                    <Icon size={28} className="group-hover:scale-110 transition-transform" />
+                    <Icon size={28} className="group-hover/icon:scale-110 transition-transform" />
                   </a>
                 );
               })}
