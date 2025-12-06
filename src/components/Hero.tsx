@@ -1,4 +1,6 @@
 import { ChevronDown, ExternalLink, Download } from 'lucide-react';
+import profileImage from '../assets/1666641222625.jpeg';
+import cvPdf from '../assets/Amani Baananou.pdf';
 
 export default function Hero() {
   const scrollToContact = () => {
@@ -30,7 +32,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full blur-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
               
               <img
-                src="/1666641222625.jpeg"
+                src={profileImage}
                 alt="Amani Baananou"
                 className="relative w-full h-full object-cover rounded-full shadow-2xl border-4 border-white dark:border-slate-800 group-hover:scale-105 transition-transform duration-500"
               />
@@ -62,7 +64,7 @@ export default function Hero() {
                   Get In Touch
                 </button>
                 <a
-                  href="/Amani Baananou.pdf"
+                  href={cvPdf}
                   download="Amani_Baananou_CV.pdf"
                   className="px-8 py-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-blue-700 dark:text-blue-300 border-2 border-blue-300 dark:border-blue-700 font-semibold rounded-lg hover:border-blue-600 dark:hover:border-blue-500 hover:shadow-xl transition-all duration-300 flex items-center gap-2 hover:scale-105"
                 >
